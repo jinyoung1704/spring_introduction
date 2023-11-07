@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository
 public class MemoryMemberRepository implements  MemberRepository { //alt + enter override로 메소드 자동 import
 
     private  static Map<Long,Member> store = new HashMap<>();
