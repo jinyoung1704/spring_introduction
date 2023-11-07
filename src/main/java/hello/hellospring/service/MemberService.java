@@ -7,8 +7,12 @@ import hello.hellospring.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
 
-public class MemberService {
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+public class MemberService { //test 파일 만들기 : ctrl + shift +t
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository){
+        this.memberRepository = memberRepository;
+    }
 
     /*
      * 회원가입
