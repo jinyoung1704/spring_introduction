@@ -2,18 +2,23 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService { //test 파일 만들기 : ctrl + shift +t
     private final MemberRepository memberRepository;
-
+    @Autowired
     public MemberService(MemberRepository memberRepository){
         this.memberRepository = memberRepository;
     }
 
+    // 스프링은 싱글톤 방식으로 MemberService면 MemberService , OrderService면 OrderService 해서 인스턴스를 하나씩만 등록!
+    // 예를들어 MemberService와 OrderService에서 각각 MemberRepository를 부른다면 동일 인스턴스가 불러져서 메모리를 더 절약할 수 있다
+    
     /*
      * 회원가입
      * */
