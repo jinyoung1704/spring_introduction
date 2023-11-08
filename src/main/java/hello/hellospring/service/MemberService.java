@@ -47,7 +47,7 @@ public class MemberService { //test 파일 만들기 : ctrl + shift +t
     /*
     * 전체 회원 조회
     * */
-    public List<Member> findMessage(){
+    public List<Member> findMembers(){
         return  memberRepository.findAll();
     }
 
